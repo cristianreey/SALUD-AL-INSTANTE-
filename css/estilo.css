@@ -169,6 +169,8 @@ header .navbar-scroll .logo {
 }
 @media (max-width: 991.5px) {
   header .right-menu {
+    display: flex;
+    flex-direction: row;
     order: 2;
   }
   header .navbar-collapse {
@@ -754,7 +756,7 @@ video {
 /* Ajustes para la sección de elección de las consultas */
 section {
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
 }
 /* Estilo para los indicadores de puntos en negro */
 .black-dots li {
