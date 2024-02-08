@@ -203,95 +203,115 @@
 
   
   <script src="js/app.js"></script>
+  <div id="ayuda" class="contenedor-ayuda d-flex justify-content-center p-10">
+    <input type="checkbox" class="btn-check" id="btn-check4" autocomplete="off">
+    <label class="btn btn-outline-dark" for="btn-check4">Formulario de ayuda</label>
+</div>
 
-  <!-- EMPIEZA FORMULARIO -->
-  <section class="formularioVenta" data-aos="zoom-in-up">
-    <!-- div container principal-->
-    <div class="container formulario">
-      <!-- Formulario con clase bootstrap -->
-      <form action="" class="needs-validation" novalidate>
-        <!-- Fila -->
-        <div class="row">
-          <!-- H1 y p -->
-          <h1 id="help">Ponte en contacto con nosotros</h1>
-          <p class="parrafo">
-            Indica tus datos y lo que deseas decirnos, y nos pondremos en contacto con usted.
-          </p>
+<script>
+  // Función para mostrar u ocultar el formulario según el estado del checkbox
+  function toggleFormulario() {
+    const formulario = document.querySelector(".formularioVenta");
+    const checkbox = document.getElementById("btn-check4");
 
-          <div class="col-sm-12">
-            <!-- divs con p para cada input. 2 divs con feedback positivo o negativo dependiendo de lo introducido -->
+    if (checkbox.checked) {
+      formulario.style.display = "block"; // Mostrar el formulario
+    } else {
+      formulario.style.display = "none"; // Ocultar el formulario
+    }
+  }
 
-            <!-- input nombre instrumento -->
-            <div>
-              <p>Nombre: <span>*</span></p>
-              <input type="text" class="form-control" placeholder="Nombre" id="nombre" required />
-              <div class="valid-feedback"></div>
-              <div class="invalid-feedback">
-                Por favor, indica su nombre.
-              </div>
-            </div>
+  // Agregar un evento de cambio al checkbox
+  document.getElementById("btn-check4").addEventListener("change", toggleFormulario);
+</script>
 
-            <!-- input precio instrumento -->
-            <div>
-              <p>Apellidos: <span>*</span></p>
-              <input type="text" class="form-control" placeholder="Apellidos" id="apellidos" required>
-              <div class="valid-feedback"></div>
-              <div class="invalid-feedback">
-                Por favor, indique su apellido.
-              </div>
-            </div>
+<!-- EMPIEZA FORMULARIO -->
+<section class="formularioVenta" data-aos="zoom-in-up" style="display:none;">
+  <!-- div container principal-->
+  <div class="container formulario">
+    <!-- Formulario con clase bootstrap -->
+    <form action="" class="needs-validation" novalidate>
+      <!-- Fila -->
+      <div class="row">
+        <!-- H1 y p -->
+        <h1 id="help">Ponte en contacto con nosotros</h1>
+        <p class="parrafo">
+          Indica tus datos y lo que deseas decirnos, y nos pondremos en contacto con usted.
+        </p>
 
-             <!-- input email -->
-             <div>
-              <p>Correo electronico: <span>*</span></p>
-              <input type="text" class="form-control" placeholder="Email" id="email" required />
-              <div class="valid-feedback"></div>
-              <div class="invalid-feedback">
-                Por favor, indica su correo electronico.
-              </div>
-            </div>
-          </div>
+        <div class="col-sm-12">
+          <!-- divs con p para cada input. 2 divs con feedback positivo o negativo dependiendo de lo introducido -->
 
-          <div class="col-sm-12">
-            <!-- textarea observaciones -->
-            <div>
-              <p>Observaciones</p>
-              <textarea class="form-control" name="observaciones" id="observaciones" rows="15"></textarea>
+          <!-- input nombre instrumento -->
+          <div>
+            <p>Nombre: <span>*</span></p>
+            <input type="text" class="form-control" placeholder="Nombre" id="nombre" required />
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">
+              Por favor, indica su nombre.
             </div>
           </div>
 
-          <!-- input enviar -->
-          <input class="form-control" type="submit" value="ENVIAR" />
-          
+          <!-- input precio instrumento -->
+          <div>
+            <p>Apellidos: <span>*</span></p>
+            <input type="text" class="form-control" placeholder="Apellidos" id="apellidos" required>
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">
+              Por favor, indique su apellido.
+            </div>
+          </div>
+
+          <!-- input email -->
+          <div>
+            <p>Correo electrónico: <span>*</span></p>
+            <input type="email" class="form-control" placeholder="Email" id="email" required />
+            <div class="valid-feedback"></div>
+            <div class="invalid-feedback">
+              Por favor, indica su correo electrónico.
+            </div>
+          </div>
         </div>
-      </form>
 
-      <!-- script para poder realizar las validaciones de los inputs -->
-      <script>
-        (() => {
-          "use strict";
+        <div class="col-sm-12">
+          <!-- textarea observaciones -->
+          <div>
+            <p>Observaciones</p>
+            <textarea class="form-control" name="observaciones" id="observaciones" rows="15"></textarea>
+          </div>
+        </div>
 
-          const forms = document.querySelectorAll(".needs-validation");
+        <!-- input enviar -->
+        <input class="form-control" type="submit" value="ENVIAR" />
 
-          Array.from(forms).forEach((form) => {
-            form.addEventListener(
-              "submit",
-              (event) => {
-                if (!form.checkValidity()) {
-                  event.preventDefault();
-                  event.stopPropagation();
-                }
+      </div>
+    </form>
 
-                form.classList.add("was-validated");
-              },
-              false
-            );
-          });
-        })();
-      </script>
-    </div>
-  </section>
-  <!-- ACABA FORMULARIO -->
+    <!-- script para poder realizar las validaciones de los inputs -->
+    <script>
+      (() => {
+        "use strict";
+
+        const forms = document.querySelectorAll(".needs-validation");
+
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </div>
+</section>
 
   <!-- EMPIEZA FOOTER -->
   <footer data-aos="fade-in">

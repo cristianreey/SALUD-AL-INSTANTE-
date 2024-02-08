@@ -201,6 +201,13 @@ header .navbar-scroll .logo {
 .formularioVenta {
   background-color: #80d0d1;
   padding: 30px 0px;
+  transition: 0.5s ease-in-out;
+}
+
+ input[type="checkbox"]:checked ~ .formularioVenta {
+    transition: 0.5s ease-in-out;
+  }
+
   /* color para los span */
   /* margen arriba y abajo para los p */
 }
@@ -319,7 +326,7 @@ input#newsletter:focus {
 }
 
 footer {
-  background-color: white;
+  background-color: #e9e9e9;
   color: black;
   padding: 40px 30px;
   font-family: "Alata";
@@ -787,4 +794,24 @@ section {
 .control-volume {
   width: 100px;
   margin: 0 10px;
+}
+
+.contenedor-ayuda {
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+}
+.contenedor-ayuda label {
+  background-color: #80d0d1;
+}
+
+.contenedor-ayuda input[type="checkbox"]:checked + label {
+  margin-bottom: 10px;
+}
+
+.icon:hover{
+  color: purple;
+  text-shadow: 0px 0px 1px;
+  transform: scale(1.1);
+  transition: 0.3s;
 }
