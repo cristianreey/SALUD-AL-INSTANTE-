@@ -1,283 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Área Privada | Inicio de Sesión</title>
-
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css" />
+    <title>Inicio de Sesión / Registro</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" href="css/aos.css" />
-    <link rel="stylesheet" href="css/estilo.css" />
-    <link href="https://fonts.googleapis.com/css?family=Alata" rel="stylesheet" />
-    <link
-      rel="shortcut icon"
-      href="assets/img/logopeque-removebg-preview.png"
-      type="image/x-icon"
-    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
 
-    <script src="vendor/bootstrap/js/bootstrap.js"></script>
-    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  </head>
-  <style>
-    @import url("https://rsms.me/inter/inter-ui.css");
-    ::selection {
-      background: #2d2f36;
-    }
-    ::-webkit-selection {
-      background: #2d2f36;
-    }
-    ::-moz-selection {
-      background: #2d2f36;
-    }
-    body {
-      background: white;
-      font-family: "Inter UI", sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
-    .page {
-      background: #e2e2e5;
-      display: flex;
-      flex-direction: column;
-      height: calc(100% - 40px);
-      position: absolute;
-      place-content: center;
-      width: calc(100% - 40px);
-    }
-    @media (max-width: 767px) {
-      .page {
-        height: auto;
+      .login-container {
+        max-width: 400px;
+        margin: 100px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        text-align: center;
         margin-bottom: 20px;
-        padding-bottom: 20px;
       }
-    }
-    .container {
-      display: flex;
-      height: 320px;
-      margin: 0 auto;
-      width: 640px;
-    }
-    @media (max-width: 767px) {
-      .container {
-        flex-direction: column;
-        height: 630px;
-        width: 320px;
+
+      .form-group {
+        margin-bottom: 20px;
       }
-    }
-    .left {
-      background: white;
-      height: calc(100% - 40px);
-      top: 20px;
-      position: relative;
-      width: 50%;
-    }
-    @media (max-width: 767px) {
-      .left {
-        height: 100%;
-        left: 20px;
-        width: calc(100% - 40px);
-        max-height: 270px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
       }
-    }
-    .login {
-      font-size: 35px;
-      font-weight: 900;
-      margin: 20px 20px;
-    }
-    .eula {
-      color: #999;
-      font-size: 14px;
-      line-height: 1.5;
-      margin-left: 20px;
-      margin-bottom: 20px;
-    }
-    .right {
-      background: #474a59;
-      box-shadow: 0px 0px 40px 16px rgba(0, 0, 0, 0.22);
-      color: #f1f1f2;
-      position: relative;
-      width: 50%;
-    }
-    @media (max-width: 767px) {
-      .right {
-        flex-shrink: 0;
-        height: 100%;
+
+      input[type="text"],
+      input[type="password"] {
         width: 100%;
-        max-height: 350px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
       }
-    }
-    svg {
-      position: absolute;
-      width: 320px;
-    }
-    path {
-      fill: none;
-      stroke: url(#linearGradient);
-      stroke-width: 4;
-      stroke-dasharray: 240 1386;
-    }
-    .form {
-      margin: 40px;
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    label {
-      color: #c2c2c5;
-      display: block;
-      font-size: 14px;
-      height: 16px;
-      margin-top: 20px;
-      margin-bottom: 5px;
-    }
-    input {
-      background: transparent;
-      border: 0;
-      color: #f2f2f2;
-      font-size: 20px;
-      height: 40px;
-      line-height: 30px;
-      outline: none !important;
-      width: 100%;
-    }
-    input::-moz-focus-inner {
-      border: 0;
-    }
-    #submit {
-      color: #707075;
-      margin-top: 40px;
-      transition: color 300ms;
-    }
-    #submit:focus {
-      color: #f2f2f2;
-    }
-    #submit:active {
-      color: #d0d0d2;
-    }
 
-    /* Estilos para el botón flotante */
-    .floating-button {
-      background-color: #2b9fae; /* Color de fondo */
-      color: white; /* Color del texto */
-      border: none;
-      border-radius: 10px; /* Hacer el botón circular */
-      font-size: 16px;
-      cursor: pointer;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-      transition: all 0.3s ease; /* Efecto de transición suave */
-      width: 50%;
-    }
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
 
-    .floating-button:hover {
-      background-color: #186c7d; /* Cambiar color de fondo al pasar el mouse */
-      transform: scale(1.05); /* Escalar un poco el botón */
-    }
+      button:hover {
+        background-color: #0056b3;
+      }
 
-    .split-button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  </style>
+      .forgot-password {
+        text-align: right;
+        margin-top: 10px;
+      }
 
+      .forgot-password a {
+        text-decoration: none;
+        color: #007bff;
+        transition: color 0.3s;
+      }
+
+      .forgot-password a:hover {
+        color: #0056b3;
+      }
+
+      .error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+
+      .toggle-form {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .toggle-form button {
+        background-color: transparent;
+        border: none;
+        color: #007bff;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .toggle-form button:hover {
+        color: #0056b3;
+      }
+    </style>
+  </head>
   <body>
-    <div class="page">
-      <div class="container">
-        <div class="left">
-          <div class="login">Iniciar Sesión</div>
-          <div class="eula">
-            Inicia sesión en nuestra página web para realizar sus consultas. Si no tienes una
-            cuenta, puedes crearla haciendo clic aquí.
-          </div>
-          <div class="split-button">
-            <button id="registerButton" class="floating-button">Registrarse</button>
-          </div>
+    <div class="login-container" id="login-container">
+      <h2>Iniciar Sesión</h2>
+      <form id="login-form" action="#" method="POST">
+        <div class="form-group">
+          <label for="usuario"><i class="material-icons">person</i> Usuario:</label>
+          <input
+            type="text"
+            id="usuario"
+            name="usuario"
+            required
+            pattern="[A-Za-z0-9]+"
+            title="Solo se permiten letras y números"
+          />
         </div>
-        <div class="right">
-          <svg viewBox="0 0 320 300">
-            <defs>
-              <linearGradient
-                inkscape:collect="always"
-                id="linearGradient"
-                x1="13"
-                y1="193.49992"
-                x2="307"
-                y2="193.49992"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop style="stop-color: #ff00ff" offset="0" id="stop876" />
-                <stop style="stop-color: #ff0000" offset="1" id="stop878" />
-              </linearGradient>
-            </defs>
-            <path
-              d="m 40,120.00016 239.99984,-3.2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143"
-            />
-          </svg>
-          <div class="form">
-            <label for="email">Email</label>
-            <input type="email" id="email" />
-            <label for="password">Password</label>
-            <input type="password" id="password" />
-            <button id="entrar" class="floating-button">Entrar</button>
-          </div>
+        <div class="form-group">
+          <label for="contrasena"><i class="material-icons">lock</i> Contraseña:</label>
+          <input type="password" id="contrasena" name="contrasena" required />
         </div>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+      <div class="forgot-password">
+        <a href="#">¿Olvidó su contraseña?</a>
+      </div>
+      <div class="error-message">
+        <!-- Aquí puedes mostrar un mensaje de error -->
+      </div>
+      <div class="toggle-form">
+        <button onclick="toggleForm()">¿No tienes una cuenta? Regístrate aquí</button>
       </div>
     </div>
+
+    <div class="login-container" id="register-container" style="display: none">
+      <h2>Registro</h2>
+      <form id="register-form" action="#" method="POST">
+        <div class="form-group">
+          <label for="nombre"><i class="material-icons">person</i> Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="email"><i class="material-icons">email</i> Correo electrónico:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="nueva-contrasena"><i class="material-icons">lock</i> Contraseña:</label>
+          <input type="password" id="nueva-contrasena" name="nueva-contrasena" required />
+        </div>
+        <button type="submit">Registrarse</button>
+      </form>
+      <div class="toggle-form">
+        <button onclick="toggleForm()">¿Ya tienes una cuenta? Inicia sesión aquí</button>
+      </div>
+    </div>
+
+    <script>
+      function toggleForm() {
+        var loginContainer = document.getElementById("login-container");
+        var registerContainer = document.getElementById("register-container");
+
+        if (loginContainer.style.display === "block") {
+          loginContainer.style.display = "none";
+          registerContainer.style.display = "block";
+        } else {
+          loginContainer.style.display = "block";
+          registerContainer.style.display = "none";
+        }
+      }
+    </script>
   </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-  <script>
-    var current = null;
-    document.querySelector("#email").addEventListener("focus", function (e) {
-      if (current) current.pause();
-      current = anime({
-        targets: "path",
-        strokeDashoffset: {
-          value: 0,
-          duration: 700,
-          easing: "easeOutQuart",
-        },
-        strokeDasharray: {
-          value: "240 1386",
-          duration: 700,
-          easing: "easeOutQuart",
-        },
-      });
-    });
-    document.querySelector("#password").addEventListener("focus", function (e) {
-      if (current) current.pause();
-      current = anime({
-        targets: "path",
-        strokeDashoffset: {
-          value: -336,
-          duration: 700,
-          easing: "easeOutQuart",
-        },
-        strokeDasharray: {
-          value: "240 1386",
-          duration: 700,
-          easing: "easeOutQuart",
-        },
-      });
-    });
-    document.querySelector("#submit").addEventListener("focus", function (e) {
-      if (current) current.pause();
-      current = anime({
-        targets: "path",
-        strokeDashoffset: {
-          value: -730,
-          duration: 700,
-          easing: "easeOutQuart",
-        },
-        strokeDasharray: {
-          value: "530 1386",
-          duration: 700,
-          easing: "easeOutQuart",
-        },
-      });
-    });
-  </script>
 </html>
