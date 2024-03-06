@@ -10,35 +10,155 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
       }
 
-      .login-container {
-        max-width: 400px;
-        margin: 100px auto;
+      .App-header {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .sectionLogo {
+        width: 50vw;
+        height: 100vh;
+        background-color: #f0f2f5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .sectionForm {
+        width: 50vw;
+        height: 100vh;
+        background-color: #0000007d;
+        color: #000000;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .fondoForm {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: cover;
+      }
+
+      .sectionLogo img {
+        width: 300px;
+        height: 300;
+      }
+
+      .containerForm {
         background-color: #fff;
         padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .login-form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .login-form h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        text-align: center;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      button {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        width: 100%;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        font-size: 16px;
+      }
+
+      button {
+        background-color: #000000;
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #4714df;
+      }
+
+      a {
+        text-align: center;
+        text-decoration: none;
+        color: #1877f2;
+      }
+
+      hr {
+        margin: 20px 0;
+        border: none;
+        border-top: 1px solid #ccc;
+      }
+
+      .create-account-btn {
+        background-color: #4714df;
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .create-account-btn:hover {
+        background-color: #000000;
+      }
+
+      .container {
+        width: 350px;
+        padding: 20px;
+        background-color: #fff;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
-      h2 {
+      .login-form h2 {
         text-align: center;
-        margin-bottom: 20px;
+        color: #000000;
       }
 
       .form-group {
         margin-bottom: 20px;
       }
 
-      label {
+      .form-group label {
         display: block;
         margin-bottom: 5px;
+        color: #555;
       }
 
-      input[type="text"],
-      input[type="password"] {
-        width: 100%;
+      .form-group input {
+        width: 80%;
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 4px;
@@ -47,124 +167,88 @@
       button {
         width: 100%;
         padding: 10px;
-        background-color: #007bff;
+        background-color: #000000;
         color: #fff;
         border: none;
         border-radius: 4px;
         cursor: pointer;
-        transition: background-color 0.3s;
+        transition: background-color 0.6s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       button:hover {
-        background-color: #0056b3;
+        background-color: #00b3b0;
+        transition: background-color 0.6s;
       }
-
       .forgot-password {
-        text-align: right;
-        margin-top: 10px;
-      }
-
-      .forgot-password a {
+        color: #2f00ff;
         text-decoration: none;
-        color: #007bff;
-        transition: color 0.3s;
+        display: flex;
+        align-items: center;
       }
 
-      .forgot-password a:hover {
-        color: #0056b3;
-      }
-
-      .error-message {
-        color: red;
-        font-size: 14px;
-        margin-top: 10px;
-      }
-
-      .toggle-form {
-        text-align: center;
-        margin-top: 20px;
-      }
-
-      .toggle-form button {
-        background-color: transparent;
-        border: none;
-        color: #007bff;
+      .forgot-password:hover {
         text-decoration: underline;
-        cursor: pointer;
       }
 
-      .toggle-form button:hover {
-        color: #0056b3;
+      .signup-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .signup {
+        color: #2f00ff;
+        transition: background-color 0.6s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .signup:hover {
+        transition: background-color 0.6s;
+        color: #000000;
       }
     </style>
   </head>
   <body>
-    <div class="login-container" id="login-container">
-      <h2>Iniciar Sesión</h2>
-      <form id="login-form" action="#" method="POST">
-        <div class="form-group">
-          <label for="usuario"><i class="material-icons">person</i> Usuario:</label>
-          <input
-            type="text"
-            id="usuario"
-            name="usuario"
-            required
-            pattern="[A-Za-z0-9]+"
-            title="Solo se permiten letras y números"
-          />
-        </div>
-        <div class="form-group">
-          <label for="contrasena"><i class="material-icons">lock</i> Contraseña:</label>
-          <input type="password" id="contrasena" name="contrasena" required />
-        </div>
-        <button type="submit">Iniciar Sesión</button>
-      </form>
-      <div class="forgot-password">
-        <a href="#">¿Olvidó su contraseña?</a>
-      </div>
-      <div class="error-message">
-        <!-- Aquí puedes mostrar un mensaje de error -->
-      </div>
-      <div class="toggle-form">
-        <button onclick="toggleForm()">¿No tienes una cuenta? Regístrate aquí</button>
-      </div>
+    <div class="App">
+      <header class="App-header">
+        <section class="sectionLogo">
+          <img src="assets/img/logo (1).png" class="App-logo" alt="logo" />
+        </section>
+        <section class="sectionForm">
+          <img src="assets/img/fotoMedico.avif" class="fondoForm" alt="fondoForm" />
+          <div class="container">
+            <form class="login-form">
+              <h2><i class="material-icons">login</i> INICIAR SESIÓN</h2>
+              <hr />
+              <div class="form-group">
+                <label for="username"><i class="material-icons">person</i> Usuario:</label>
+                <input type="text" id="username" name="username" required />
+              </div>
+              <div class="form-group">
+                <label for="password"><i class="material-icons">lock</i> Contraseña:</label>
+                <input type="password" id="password" name="password" required />
+              </div>
+              <div class="form-group">
+                <a href="#" class="forgot-password"
+                  ><i class="material-icons">help_outline</i> ¿Olvidaste tu contraseña?</a
+                >
+              </div>
+              <button type="submit"><i class="material-icons">arrow_forward</i> Iniciar Sesión</button>
+              <div class="signup-link">
+                <span>¿No tienes una cuenta? </span><br />
+                <a href="#" class="signup"><i class="material-icons">person_add</i> Regístrate aquí</a>
+              </div>
+            </form>
+          </div>
+        </section>
+      </header>
     </div>
-
-    <div class="login-container" id="register-container" style="display: none">
-      <h2>Registro</h2>
-      <form id="register-form" action="#" method="POST">
-        <div class="form-group">
-          <label for="nombre"><i class="material-icons">person</i> Nombre:</label>
-          <input type="text" id="nombre" name="nombre" required />
-        </div>
-        <div class="form-group">
-          <label for="email"><i class="material-icons">email</i> Correo electrónico:</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div class="form-group">
-          <label for="nueva-contrasena"><i class="material-icons">lock</i> Contraseña:</label>
-          <input type="password" id="nueva-contrasena" name="nueva-contrasena" required />
-        </div>
-        <button type="submit">Registrarse</button>
-      </form>
-      <div class="toggle-form">
-        <button onclick="toggleForm()">¿Ya tienes una cuenta? Inicia sesión aquí</button>
-      </div>
-    </div>
-
-    <script>
-      function toggleForm() {
-        var loginContainer = document.getElementById("login-container");
-        var registerContainer = document.getElementById("register-container");
-
-        if (loginContainer.style.display === "block") {
-          loginContainer.style.display = "none";
-          registerContainer.style.display = "block";
-        } else {
-          loginContainer.style.display = "block";
-          registerContainer.style.display = "none";
-        }
-      }
-    </script>
   </body>
 </html>
