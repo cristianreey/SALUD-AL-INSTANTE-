@@ -213,6 +213,16 @@
         transition: background-color 0.6s;
         color: #000000;
       }
+      @media only screen and (max-width: 897px) {
+        .sectionLogo {
+          display: none;
+        }
+        .sectionForm {
+          width: 100vw;
+          padding: 20px;
+          margin-left: 10px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -240,10 +250,14 @@
                   ><i class="material-icons">help_outline</i> ¿Olvidaste tu contraseña?</a
                 >
               </div>
-              <button type="submit"><i class="material-icons">arrow_forward</i> Iniciar Sesión</button>
+              <button type="submit">
+                <i class="material-icons">arrow_forward</i> Iniciar Sesión
+              </button>
               <div class="signup-link">
                 <span>¿No tienes una cuenta? </span><br />
-                <a href="#" class="signup"><i class="material-icons">person_add</i> Regístrate aquí</a>
+                <a href="register.html" class="signup"
+                  ><i class="material-icons">person_add</i> Regístrate aquí</a
+                >
               </div>
             </form>
           </div>

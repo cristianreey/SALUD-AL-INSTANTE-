@@ -204,13 +204,13 @@ header .navbar-scroll .logo {
   transition: 0.5s ease-in-out;
 }
 
- input[type="checkbox"]:checked ~ .formularioVenta {
-    transition: 0.5s ease-in-out;
-  }
-
-  /* color para los span */
-  /* margen arriba y abajo para los p */
+input[type="checkbox"]:checked ~ .formularioVenta {
+  transition: 0.5s ease-in-out;
 }
+
+/* color para los span */
+/* margen arriba y abajo para los p */
+
 .formularioVenta input:hover,
 .formularioVenta textarea:hover {
   background-color: #f2f2f2;
@@ -799,7 +799,6 @@ section {
 .contenedor-ayuda {
   margin-bottom: 10px;
   margin-top: 10px;
-
 }
 .contenedor-ayuda label {
   background-color: #80d0d1;
@@ -809,9 +808,45 @@ section {
   margin-bottom: 10px;
 }
 
-.icon:hover{
+.icon:hover {
   color: purple;
   text-shadow: 0px 0px 1px;
   transform: scale(1.1);
   transition: 0.3s;
+}
+/* Estilos personalizados para los botones de control del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px; /* Ancho del botón */
+  height: 50px; /* Alto del botón */
+  background-color: rgba(0, 0, 0, 0.5); /* Color de fondo */
+  border-radius: 50%; /* Forma circular */
+  border: none; /* Sin borde */
+  font-size: 20px; /* Tamaño de la fuente */
+  color: white; /* Color del icono */
+  transition: background-color 0.3s; /* Transición de color */
+  translate: 200% 600%;
+}
+
+.carousel-control-next {
+  translate: -200% 600%;
+}
+
+/* Estilos para el hover del botón */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Cambio de color al pasar el ratón */
+}
+
+/* Estilos para el texto de accesibilidad */
+.visually-hidden {
+  position: absolute; /* Posición absoluta */
+  width: 1px; /* Ancho mínimo */
+  height: 1px; /* Alto mínimo */
+  margin: -1px; /* Margen negativo */
+  padding: 0; /* Sin relleno */
+  overflow: hidden; /* Ocultar el texto */
+  clip: rect(0, 0, 0, 0); /* Recortar el texto */
+  white-space: nowrap; /* Sin espacios en blanco */
+  border: 0; /* Sin borde */
 }
